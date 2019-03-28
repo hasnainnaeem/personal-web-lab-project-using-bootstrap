@@ -1,26 +1,31 @@
-function beautifySkillsTable(){
-    $("#tech-skills-list > li:odd, #soft-skills-list > li:odd").addClass("list-style-1");
-    $("#tech-skills-list > li:even, #soft-skills-list > li:even").addClass("list-style-2");
-
-}
-
-
 function fadingInHeadings(){
     $(":header").hide().fadeIn(1500);
 }
 
-function menuEffects(){
-    $("ul.menu li").hide().each(function(index) {
-        $(this).delay(50*index).fadeIn(700);
-    });
-}
 
 function setup() {
-    // Chaning list style in skills table
-    beautifySkillsTable();
-    menuEffects();
     fadingInHeadings();
 }
+
 // Main starts
-// setup();
 setup();
+
+
+/* Testing */
+
+// Increasing size fade in animation on H2 Headings
+$("h2").each(function(){
+    $(this).css("font-size", "0");
+    $(this).animate({
+        fontSize: "2rem"
+    }, 100, "swing");
+});
+
+// Adding show details button for all projects
+$projectDetails = $("p.project-details");
+$projectDetails.hide();
+$projectDetails.parent().append("<button type=\"button\" class=\"btn btn-primary btn-sm\">Show Details</button>\n");
+$projectDetails.parent().on("click","button" , function(){
+    $projectDetails.fadeIn(500);
+    $projectDetails.next().fadeOut(500);
+});
