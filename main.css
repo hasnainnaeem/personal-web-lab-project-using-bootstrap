@@ -1,0 +1,116 @@
+
+.contact-form td {
+    padding: 5px;
+}
+
+.contact-form label  {
+    font-weight: bold;
+}
+
+.contact-form textarea, .contact-form input {
+    width: 100%;
+    display: block;
+}
+
+.contact-form textarea {
+    height: 200px;
+}
+
+.contact-form input, .contact-form textarea {
+    color: white;
+    border: 2px solid black;
+    border-radius: 20px;
+    font-size: 1em;
+    font-family: Georgia, serif;
+    padding-left: 20px;
+}
+
+.contact-form input:active, .contact-form input:hover, .contact-form textarea:active, .contact-form textarea:hover {
+    transition: background-color .2s ease-in, transform .3s, border .2s ease-in, transform .3s;
+    transform: scale(1.1);
+    background: #FFFFFF;
+    border: 4px solid black;
+    color: black;
+    box-shadow: 3px 3px 7px grey;
+}
+
+#contact-send {
+    width: 150px;
+    padding: 20px;
+    border: 2px solid black;
+    margin-left: 45%;
+    border-radius: 40px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.2em;
+    color: black;
+    text-shadow: 0px 1px 1px #000000;
+    border-bottom: 2px solid black;
+    cursor: pointer;
+    background: white;
+}
+
+#contact-send:hover {
+    transition: background-color .2s ease-in, transform .5s ease-in-out, border .2s ease-in, transform .3s;
+    color: black;
+    background: white;
+    border: 5px solid black;
+    animation: shadow-pop-tr 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+}
+
+#contact-send:active {
+    background: white;
+    animation: shadow-push-tr 0.1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+}
+
+.warning {
+    color: red;
+}
+
+.feedback {
+    color: green;
+}
+
+#footer-text {
+    background: #007bff;
+    color: white;
+    padding: 1px;
+    padding-top: 10px;
+}
+
+
+/* For scroll bar */
+body::-webkit-scrollbar {
+    width: .6em;
+    border-radius: 1000px;
+}
+
+
+body::-webkit-scrollbar-track {
+    border: 2px solid #007bff;
+    border-radius: 1000px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    border-radius: 1000px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #007bff;
+    border-radius: 1000px;
+}
+
+body::-webkit-scrollbar-thumb:active {
+    background-color: white;
+    border-radius: 1000px;
+}
+
+body::-webkit-scrollbar-track-piece:start {
+    /* Select the top half (or left half) or scrollbar track individually */
+}
+
+body::-webkit-scrollbar-track-piece:end {
+    /* Select the top half (or left half) or scrollbar track individually */
+}
