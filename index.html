@@ -284,20 +284,20 @@
     <div class="container" id="hobbies">
         <h2 class="text-center">Hobbies and Interests</h2>
         <div class="d-flex justify-content-center">
-            <ol>
-                <li>Interests include Ethical Hacking &amp; Artificial Intelligence</li>
-                <li>Solving algorithmic problems on HackerRank</li>
-                <li>I love to read books and articles from Quora & Medium</li>
-                <li>Photography</li>
-                <li>Boxing & Gym</li>
+            <ol class="list-group">
+                <li class="list-group-item">Interests include Ethical Hacking &amp; Artificial Intelligence</li>
+                <li class="list-group-item">Solving algorithmic problems on HackerRank</li>
+                <li class="list-group-item">I love to read books and articles from Quora & Medium</li>
+                <li class="list-group-item">Photography</li>
+                <li class="list-group-item">Boxing & Gym</li>
             </ol>
         </div>
     </div>
     <br />
 
     <div class="container">
-        <h2>Follow me</h2>
-        <div>
+        <h2 class="text-center">Follow Me</h2>
+        <div class="text-center">
             <a href="https://www.Github.com/hasnainnaeem" target="_blank"><i class="fab fa-github fa-3x"></i></a>
             <a href="https://www.facebook.com/hasnainnaeemmk" target="_blank"><i class="fab fa-facebook fa-3x"></i></a>
             <a href="https://www.instagram.com/hasnainnaeem_mk" target="_blank"><i class="fab fa-instagram fa-3x"></i></a>
@@ -313,13 +313,14 @@
 <footer>
     <div class="container">
     <form action="contact.py" class="contact-form" id="contact-form">
-        <div class="row">
-            <div class="col-1">
+
+        <div class="row text-justify-center">
+            <div class="col-1 text-center">
                 <i class="far fa-envelope fa-3x"></i>
             </div>
-            <h2>&nbsp&nbspContact Me</h2>
-
+            <h2 class="text-center">&nbsp&nbspContact Me</h2>
         </div>
+
         <table class="contact-form-table">
 
             <tr>
@@ -350,8 +351,8 @@
                 <td><textarea id="message" required="required"></textarea></td>
             </tr>
 
-            <tr class="buttonrow">
-                <td colspan="2"><input type="submit" id="contact-send" value="Send"/></td>
+            <tr class="buttonrow text-center">
+                <td colspan="2"><button type="button" id="contact-send" class="btn btn-outline-dark btn-lg">Send Message</button></td>
             </tr>
         </table>
     </form>
