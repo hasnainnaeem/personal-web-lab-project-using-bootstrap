@@ -2,12 +2,12 @@ function fadingInHeadings(){
     $(":header").hide().fadeIn(1500);
 }
 
-function headingTwoIncreasingSizeAnimation(){
+function textIncreasingSizeAnimation(selector, sizeInEm){
     // Increasing size fade in animation on H2 Headings
-    $("h2").each(function(){
+    $(selector).each(function(){
         $(this).css("font-size", "0");
         $(this).animate({
-            fontSize: "2rem"
+            fontSize: sizeInEm+"em"
         }, 100, "swing");
     });
 }
@@ -17,18 +17,18 @@ function addProjectShowDetailsButton(){
     let $projectDetails = $("p.project-details");
     $projectDetails.hide();
     $projectDetails.parent().append("<button type=\"button\" class=\"btn btn-primary btn-sm\">Show Details</button>\n");
-    $projectDetails.parent().on("click","button" , function(){
-        $projectDetails.fadeIn(500);
-        $projectDetails.next().fadeOut(500);
-    });
+    $("#projects-table button").on("click", function(){
+            $(this).prev().show();
+            $(this).remove();
+    })
 }
 
 function setup() {
     fadingInHeadings();
-    headingTwoIncreasingSizeAnimation();
+    textIncreasingSizeAnimation("h2", 2);
+    textIncreasingSizeAnimation("h3", 1.75);
     addProjectShowDetailsButton();
 }
-
 
 // Main starts
 setup();
