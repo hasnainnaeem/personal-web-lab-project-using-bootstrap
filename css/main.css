@@ -47,6 +47,11 @@
     color: green;
 }
 
+#tweets {
+    max-height: 500px;
+    overflow: scroll;
+}
+
 #footer-text {
     background: #007bff;
     color: white;

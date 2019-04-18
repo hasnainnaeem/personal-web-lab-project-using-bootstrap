@@ -316,51 +316,75 @@
 
 <footer>
     <div class="container">
-    <form action="contact.py" class="contact-form" id="contact-form" method="POST">
+        <div class="row">
+            <div class="col">
+                <form action="contact.py" class="contact-form" id="contact-form" method="POST">
 
-        <h2 class="text-center">Contact Me</h2>
+                    <h2 class="text-center">Contact Me</h2>
 
-        <table class="contact-form-table">
+                    <table class="contact-form-table">
 
-            <tr>
-                <td class="slim-column"><label for="fname">First Name:</label></td>
-                <td>
-                    <input type="text" id="fname" name="fname" class="registration-form-input" size="50" required="required"/>
-                    <div id="fname-feedback" class=""></div>
-                </td>
-            </tr>
+                        <tr>
+                            <td class="slim-column"><label for="fname">First Name:</label></td>
+                            <td>
+                                <input type="text" id="fname" name="fname" class="registration-form-input" size="50" required="required"/>
+                                <div id="fname-feedback" class=""></div>
+                            </td>
+                        </tr>
 
-            <tr>
-                <td class="slim-column"><label for="lname">Last Name:</label></td>
-                <td>
-                    <input type="text" id="lname" name="lname" class="registration-form-input" size="50" />
-                </td>
-            </tr>
+                        <tr>
+                            <td class="slim-column"><label for="lname">Last Name:</label></td>
+                            <td>
+                                <input type="text" id="lname" name="lname" class="registration-form-input" size="50" />
+                            </td>
+                        </tr>
 
-            <tr>
-                <td class="slim-column"><label for="email">Email:</label></td>
-                <td>
-                    <input type="text" id="email" name="email" class="registration-form-input" size="50" required="required"/>
-                    <div id="email-feedback"></div>
-                </td>
-            </tr>
+                        <tr>
+                            <td class="slim-column"><label for="email">Email:</label></td>
+                            <td>
+                                <input type="text" id="email" name="email" class="registration-form-input" size="50" required="required"/>
+                                <div id="email-feedback"></div>
+                            </td>
+                        </tr>
 
-            <tr>
-                <td class="slim-column"><label for="message">Message:</label></td>
-                <td>
-                    <textarea id="message" name="message" required="required"></textarea>
-                    <div id="message-feedback" class=""></div>
-                </td>
+                        <tr>
+                            <td class="slim-column"><label for="message">Message:</label></td>
+                            <td>
+                                <textarea id="message" name="message" required="required"></textarea>
+                                <div id="message-feedback" class=""></div>
+                            </td>
 
-            </tr>
+                        </tr>
 
-            <tr class="buttonrow text-center">
-                <td colspan="2"><button type="submit button" id="contact-send" class="btn btn-outline-dark btn-lg">Send Message</button></td>
-            </tr>
-        </table>
-    </form>
+                        <tr class="buttonrow text-center">
+                            <td colspan="2"><button type="submit button" id="contact-send" class="btn btn-outline-dark btn-lg">Send Message</button></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+
+            <div class="col" id="tweets-box">
+                <h2 class="text-center">Latest Tweets</h2>
+                <div id="tweets">
+                    <a class="twitter-timeline" href="https://twitter.com/hasnainnaeemmk?ref_src=twsrc%5Etfw">
+                    </a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+            </div>
+
+            <div class="col">
+                <h2 class="text-center">Instagram Feed</h2>
+                <!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js">
+
+            </script>
+                <iframe src="//lightwidget.com/widgets/151f7ece7cdd52faa4ce02d8842a8224.html"
+                             scrolling="no" allowtransparency="true" class="lightwidget-widget"
+                             style="width:100%;border:0;overflow:hidden;">
+
+            </iframe>
+            </div>
+        </div>
+        <br/>
     </div>
-    <br/>
     <div id="footer-text">
         <p class="text-center">&copy; 2019 - Designed with &hearts; by Hasnain Naeem.</p>
     </div>
