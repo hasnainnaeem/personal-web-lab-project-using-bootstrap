@@ -1,53 +1,90 @@
-function checkLength(e, fieldType, minLength, feedbackType) {
-    let textField = e.target;
-    let formFeedback = textField.nextElementSibling;
+let isEmailFilled = false, isFirstNameFilled = false, isMessageFilled = false;
 
-    if(textField.value.length < minLength) {
+function checkLength(elem, fieldType, minLength, feedbackType) {
+    let isFiledCorrectly = false;
+    let textField = elem;
+    let formFeedback = textField.next();
+    if(textField.val().length < minLength) {
         if(feedbackType=="warning")
-            formFeedback.setAttribute("class", "warning");
+            formFeedback.attr("class", "warning");
 
         else if(feedbackType=="tip")
-            formFeedback.setAttribute("class", "feedback");
+            formFeedback.attr("class", "feedback");
 
-        formFeedback.innerText = fieldType + " must contain " + minLength + " characters.";
+        formFeedback.text(fieldType + " must contain " + minLength + " characters.");
+        isFiledCorrectly = false;
     }
     else {
-        formFeedback.innerText = "";
+        formFeedback.text("");
+        isFiledCorrectly = true;
     }
 
-    return false;
+    return isFiledCorrectly;
 }
 
-function checkEmail(e, feedbackType) {
-
-    let emailField = e.target;
-    let formFeedback = emailField.nextElementSibling;
-
-    if(!emailField.value.includes('@')) {
-        formFeedback.innerText = "Incorrect Email. Rewrite correct email.";
-        formFeedback.setAttribute("class", "warning");
+function checkEmail(elem, feedbackType) {
+    let emailField = elem;
+    let formFeedback = emailField.next();
+    if(!emailField.val().includes('@')) {
+        formFeedback.text("Incorrect Email. Rewrite correct email.");
+        formFeedback.attr("class", "warning");
+        isEmailFilled = false;
     }
     else {
-        formFeedback.innerText = "";
+        formFeedback.text("");
+        isEmailFilled = true;
     }
 
-    return false;
+    return isEmailFilled;
 }
 
 // validating first name
-let fnameElem = document.getElementById("fname");
-fnameElem.addEventListener('focus', function(e) {
-    checkLength(e, "First name", 3, "tip" )
-}, false);
-
-
-fnameElem.addEventListener('blur', function(e) {
-    checkLength(e, "First name", 3 ,"warning")
-}, false);
+let fnameElem = $("#fname");
+fnameElem.on('focus', function() {
+    isFirstNameFilled = checkLength($(this), "First name", 3, "tip" );
+});
+fnameElem.on('blur', function() {
+    isFirstNameFilled = checkLength($(this), "First name", 3 ,"warning")
+});
 
 // validating email
-let emailElem = document.getElementById("email");
-emailElem.addEventListener('blur', function(e) {
-    checkEmail(e);
-}, false);
+let emailElem = $("#email");
+emailElem.on('blur', function() {
+    isEmailFilled = checkEmail($(this));
+});
+
+// validating message
+let messageElem = $("#message");
+messageElem.on('focus', function() {
+    isMessageFilled = checkLength($(this), "Message", 3, "tip" );
+});
+messageElem.on('blur', function() {
+    isMessageFilled = checkLength($(this), "Message", 3 ,"warning")
+});
+
+// Sending data to Back-end script
+$contactForm = $("#contact-form");
+$contactForm.submit(function(e) {
+    e.preventDefault();
+    if(!(isFirstNameFilled && isEmailFilled && isMessageFilled))
+    {
+        if($contactForm.has("#form-not-filled-message").length) // Insert message if not previously inserted
+            null;
+        else
+            $contactForm.append("<p class='warning' id='form-not-filled-message'>" +
+                "Please fill form correctly before submitting.</p>").hide().fadeIn();
+    }
+    else {
+        let details = $contactForm.serialize();
+        $.post("php/contact.php", details, function(data){
+            $data = $(data);
+            $data.attr("id", "form-submitted-message");
+            $contactForm.find("input, textarea").val("");
+            if($contactForm.has("#form-submitted-message").length)  // insert if not previously inserted
+                null;
+            else
+                $contactForm.append($data).hide().fadeIn();
+        });
+    }
+});
 
