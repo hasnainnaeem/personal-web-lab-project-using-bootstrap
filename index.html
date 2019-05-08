@@ -318,7 +318,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <form action="contact.py" class="contact-form" id="contact-form" method="POST">
+                <form action="php/contact.php" class="contact-form" id="contact-form" method="POST">
 
                     <h2 class="text-center">Contact Me</h2>
 
@@ -327,7 +327,7 @@
                         <tr>
                             <td class="slim-column"><label for="fname">First Name:</label></td>
                             <td>
-                                <input type="text" id="fname" name="fname" class="registration-form-input" size="50" required="required"/>
+                                <input type="text" id="fname" name="fname" class="form-control registration-form-input" size="50" required="required"/>
                                 <div id="fname-feedback" class=""></div>
                             </td>
                         </tr>
@@ -335,14 +335,14 @@
                         <tr>
                             <td class="slim-column"><label for="lname">Last Name:</label></td>
                             <td>
-                                <input type="text" id="lname" name="lname" class="registration-form-input" size="50" />
+                                <input type="text" id="lname" name="lname" class="form-control registration-form-input" size="50" />
                             </td>
                         </tr>
 
                         <tr>
                             <td class="slim-column"><label for="email">Email:</label></td>
                             <td>
-                                <input type="text" id="email" name="email" class="registration-form-input" size="50" required="required"/>
+                                <input type="text" id="email" name="email" class="form-control registration-form-input" size="50" required="required"/>
                                 <div id="email-feedback"></div>
                             </td>
                         </tr>
@@ -350,7 +350,7 @@
                         <tr>
                             <td class="slim-column"><label for="message">Message:</label></td>
                             <td>
-                                <textarea id="message" name="message" required="required"></textarea>
+                                <textarea class="form-control" id="message" name="message" required="required"></textarea>
                                 <div id="message-feedback" class=""></div>
                             </td>
 
